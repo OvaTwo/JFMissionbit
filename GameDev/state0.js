@@ -23,16 +23,24 @@ var tree = game.add.sprite(0, 0, 'trees');
     },
 
 	update: function(){
-        if (game.input. keyboard.isDown (Phaser.Keyboard.RIGHT)){
+if (game.input. keyboard.isDown (Phaser.Keyboard.RIGHT)){
             adam.x = adam.x + speed;
+            adam.animations.play('walk', 20, true);
         }
-	   if(game.input. keyboard.isDown (Phaser.Keyboard.LEFT)){
+if(game.input. keyboard.isDown (Phaser.Keyboard.LEFT)){
            adam.x = adam.x - speed;
+           adam.animations.play('walk', 20, true)
         }
-        if(game.input. keyboard.isDown (Phaser.Keyboard.UP)){
+else if{
+    adam.animations.stop('walk');
+}
+if(game.input. keyboard.isDown (Phaser.Keyboard.UP)){
             adam.y = adam.y - speed;
+            if(adam.y < 400){
+            adam.y = 400;
+            }                
         }
-        if(game.input. keyboard.isDown (Phaser.Keyboard.DOWN)){
+if(game.input. keyboard.isDown (Phaser.Keyboard.DOWN)){
             adam.y = adam.y + speed;
         }
     }
